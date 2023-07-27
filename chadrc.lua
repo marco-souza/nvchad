@@ -6,6 +6,8 @@ local highlights = require "custom.highlights"
 
 -- Setup Editor
 vim.wo.relativenumber = true
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 
 M.ui = {
   theme = "tokyonight",
