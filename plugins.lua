@@ -46,12 +46,14 @@ local plugins = {
     },
     {
       "windwp/nvim-ts-autotag",
+      event = "InsertEnter",
       config = function()
         require'nvim-ts-autotag'.setup()
       end
     },
     {
       "dkarter/bullets.vim",
+      event = "InsertEnter",
       config = function()
         vim.g.bullets_enabled_file_types = {
           'markdown',
@@ -63,14 +65,15 @@ local plugins = {
     },
     {
       "TimUntersberger/neogit",
+      event = "InsertEnter",
       config = function()
         require'neogit'.setup()
       end
     },
     {
       "kylechui/nvim-surround",
+      event = "InsertEnter",
       version = "*", -- Use for stability; omit to use `main` branch for the latest features
-      event = "VeryLazy",
       config = function()
           require("nvim-surround").setup({
               -- Configuration here, or leave empty to use defaults
@@ -79,15 +82,20 @@ local plugins = {
     },
     {
       "ThePrimeagen/harpoon",
+      event = "InsertEnter",
       config = function()
         require('telescope').load_extension('harpoon')
       end
     },
     {
       "aca/emmet-ls",
+      event = "InsertEnter",
       config = require "custom.configs.emmet"
     },
-    { "wakatime/vim-wakatime" },
+    {
+      "wakatime/vim-wakatime",
+      event = "InsertEnter",
+    },
 
   -- To make a plugin not be loaded
     -- {
