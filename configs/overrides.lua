@@ -2,16 +2,25 @@ local M = {}
 
 M.treesitter = {
   ensure_installed = {
+    "markdown",
+    "markdown_inline",
+
+    -- defaults 
     "vim",
     "lua",
+
+    -- web dev 
     "html",
     "css",
     "javascript",
     "typescript",
     "tsx",
+    "json",
+
+     -- low level
     "c",
-    "markdown",
-    "markdown_inline",
+    "zig",
+    "rust",
   },
   indent = {
     enable = true,
@@ -33,6 +42,10 @@ M.mason = {
     "typescript-language-server",
     "deno",
     "prettier",
+
+    -- rust stuff
+    "rustfmt",
+    "rust-analyzer",
 
     -- c/cpp stuff
     "clangd",
