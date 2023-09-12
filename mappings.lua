@@ -1,8 +1,6 @@
 ---@type MappingsTable
 local M = {}
 
-
-
 M.personal = {
   n = {
     [";"] = { ":", "enter command mode", opts = { nowait = true } },
