@@ -42,6 +42,7 @@ M.mason = {
     "typescript-language-server",
     "deno",
     "prettier",
+    "emmet_ls",
 
     -- rust stuff
     "rustfmt",
