@@ -88,14 +88,23 @@ local plugins = {
       end
     },
     {
-      "aca/emmet-ls",
-      event = "InsertEnter",
-      config = require "custom.configs.emmet"
+      "wakatime/vim-wakatime",
+      event = 'VeryLazy',
     },
     {
-      "wakatime/vim-wakatime",
-      event = "InsertEnter",
+      "folke/todo-comments.nvim",
+      dependencies = { "nvim-lua/plenary.nvim" },
     },
+
+  -- Local Plugins
+    -- {
+    --   name = "ollama",
+    --   dir = "~/w/plugins/ollama.nvchad/",
+    --   event = "InsertEnter",
+    --   config = function ()
+    --     require('ollama').setup()
+    --   end
+    -- },
 
   -- To make a plugin not be loaded
     -- {
