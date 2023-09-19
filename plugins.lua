@@ -97,14 +97,12 @@ local plugins = {
     },
 
   -- Local Plugins
-    -- {
-    --   name = "ollama",
-    --   dir = "~/w/plugins/ollama.nvchad/",
-    --   event = "InsertEnter",
-    --   config = function ()
-    --     require('ollama').setup()
-    --   end
-    -- },
+    {
+      name = "ollama",
+      dir = "~/w/plugins/ollama.nvchad/",
+      event = "VeryLazy",
+      config = function () require('ollama').setup() end
+    },
 
   -- To make a plugin not be loaded
     -- {

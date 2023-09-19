@@ -2,8 +2,15 @@
 local M = {}
 
 M.personal = {
+  t = {
+    -- ai
+    ["<leader>ac"] = { function() require("ollama").open() end, desc = "Toggle AI Chat" },
+  },
   n = {
     [";"] = { ":", "enter command mode", opts = { nowait = true } },
+
+    -- ai
+    ["<leader>ac"] = { function() require("ollama").open() end, desc = "Toggle AI Chat" },
 
     -- neogit
     ["<leader>gg"] = { function() require("neogit").open() end, desc = "Manage Git (Neogit)" },
