@@ -10,7 +10,8 @@ M.personal = {
     [";"] = { ":", "enter command mode", opts = { nowait = true } },
 
     -- ai
-    ["<leader>ac"] = { function() require("ollama").open() end, desc = "Toggle AI Chat" },
+    ["<leader>ac"] = { function() require("ollama").open() end, desc = "Toggle AI Cahat" },
+    ["<leader>aa"] = { function() require("llm.completion").toggle_suggestion() end, desc = "Enable AI Assistent" },
 
     -- neogit
     ["<leader>gg"] = { function() require("neogit").open() end, desc = "Manage Git (Neogit)" },

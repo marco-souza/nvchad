@@ -96,12 +96,31 @@ local plugins = {
       dependencies = { "nvim-lua/plenary.nvim" },
     },
 
+  -- AI
+    {
+      "huggingface/llm.nvim",
+      event = "VeryLazy",
+      opts = {
+        model_eos = "<EOT>",
+        fim = {
+          enabled = true,
+          prefix = "<PRE> ",
+          middle = " <MID>",
+          suffix = " <SUF>",
+        },
+        model = "codellama/CodeLlama-13b-hf",
+        context_window = 4096,
+      },
+    },
+
   -- Local Plugins
     {
       name = "ollama",
       dir = "~/w/plugins/ollama.nvchad/",
       event = "VeryLazy",
-      config = function () require('ollama').setup() end
+      config = function ()
+        require('ollama').setup()
+      end
     },
 
   -- To make a plugin not be loaded
