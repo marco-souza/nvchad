@@ -25,12 +25,10 @@ local servers = {
   "clangd",
   "rust_analyzer",
   "emmet_ls",
-  "go",
   "gofmt",
   "godoc",
   "gopls",
   "goimports",
-  "goimports-reviser",
 }
 
 for _, lsp in ipairs(servers) do

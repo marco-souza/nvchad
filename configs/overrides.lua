@@ -57,7 +57,6 @@ M.mason = {
     "godoc",
     "gofmt",
     "goimports",
-    "goimports-reviser",
   },
 }
 
