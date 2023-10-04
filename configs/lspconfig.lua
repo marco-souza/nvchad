@@ -4,12 +4,11 @@ local capabilities = require("plugins.configs.lspconfig").capabilities
 local lspconfig = require "lspconfig"
 
 local function is_deno_project()
-  local files = vim.fs.find(
-    {'deno.json', 'deno.jsonc'},
-    { upward = true }
-  )
+  local files = vim.fs.find({ "deno.json", "deno.jsonc" }, { upward = true })
   -- if table has something, return true
-  for _ in pairs(files) do return true end
+  for _ in pairs(files) do
+    return true
+  end
   return false
 end
 
@@ -19,7 +18,20 @@ if not is_deno_project() then
 end
 
 -- if you just want default config for the servers then put them in a table
-local servers = { "html", "cssls", ts_lsp, "clangd", "rust_analyzer", "emmet_ls" }
+local servers = {
+  "html",
+  "cssls",
+  ts_lsp,
+  "clangd",
+  "rust_analyzer",
+  "emmet_ls",
+  "go",
+  "gofmt",
+  "godoc",
+  "gopls",
+  "goimports",
+  "goimports-reviser",
+}
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
@@ -28,5 +40,5 @@ for _, lsp in ipairs(servers) do
   }
 end
 
--- 
+--
 -- lspconfig.pyright.setup { blabla}

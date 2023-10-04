@@ -51,6 +51,13 @@ M.mason = {
     -- c/cpp stuff
     "clangd",
     "clang-format",
+
+    -- go suff
+    "gopls",
+    "godoc",
+    "gofmt",
+    "goimports",
+    "goimports-reviser",
   },
 }
 
