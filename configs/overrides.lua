@@ -56,6 +56,7 @@ M.mason = {
     "gopls",
     "godoc",
     "gofmt",
+    "gofumpt",
     "goimports",
   },
 }

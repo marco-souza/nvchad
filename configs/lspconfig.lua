@@ -26,6 +26,7 @@ local servers = {
   "rust_analyzer",
   "emmet_ls",
   "gofmt",
+  "gofumpt",
   "godoc",
   "gopls",
   "goimports",
