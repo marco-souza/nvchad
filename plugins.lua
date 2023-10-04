@@ -97,31 +97,41 @@ local plugins = {
     },
 
   -- AI
+    -- {
+    --   "huggingface/llm.nvim",
+    --   event = "VeryLazy",
+    --   opts = {
+    --     model_eos = "<EOT>",
+    --     fim = {
+    --       enabled = true,
+    --       prefix = "<PRE> ",
+    --       middle = " <MID>",
+    --       suffix = " <SUF>",
+    --     },
+    --     model = "codellama/CodeLlama-13b-hf",
+    --     context_window = 4096,
+    --     -- model = "http://localhost:11434/api/",
+    --     -- tokenizer = {
+    --     --   repository = "codellama/CodeLlama-13b-hf",
+    --     -- }
+    --   },
+    -- },
     {
-      "huggingface/llm.nvim",
-      event = "VeryLazy",
-      opts = {
-        model_eos = "<EOT>",
-        fim = {
-          enabled = true,
-          prefix = "<PRE> ",
-          middle = " <MID>",
-          suffix = " <SUF>",
-        },
-        model = "codellama/CodeLlama-13b-hf",
-        context_window = 4096,
-      },
-    },
-
-  -- Local Plugins
-    {
+      "marco-souza/ollama.nvim",
       name = "ollama",
-      dir = "~/w/plugins/ollama.nvchad/",
       event = "VeryLazy",
       config = function ()
         require('ollama').setup()
       end
     },
+    -- {
+    --   name = "ollama",
+    --   dir = "~/w/plugins/ollama.nvchad/",
+    --   event = "VeryLazy",
+    --   config = function ()
+    --     require('ollama').setup()
+    --   end
+    -- },
 
   -- To make a plugin not be loaded
     -- {
