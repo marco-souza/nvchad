@@ -2,6 +2,7 @@ local on_attach = require("plugins.configs.lspconfig").on_attach
 local capabilities = require("plugins.configs.lspconfig").capabilities
 
 local lspconfig = require "lspconfig"
+local util = require "lspconfig/util"
 
 local function is_deno_project()
   local files = vim.fs.find({ "deno.json", "deno.jsonc" }, { upward = true })
@@ -25,19 +26,39 @@ local servers = {
   "clangd",
   "rust_analyzer",
   "emmet_ls",
-  "gofmt",
-  "gofumpt",
-  "godoc",
   "gopls",
-  "goimports",
+  "golines",
+  "gofumpt",
+  "goimports_reviser",
+}
+
+local configs = {
+  gopls = {
+    on_attach = on_attach,
+    capabilities = capabilities,
+    cmd = { "gopls" },
+    filetypes = { "go", "gomod", "gowork", "gotmpl" },
+    root_dir = util.root_pattern("go.work", "go.mod", ".git"),
+    settings = {
+      gopls = {
+        completeUnimported = true,
+        usePlaceholders = true,
+        analyses = {
+          unusedparams = true,
+        },
+      },
+    },
+  },
 }
 
 for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup {
-    on_attach = on_attach,
-    capabilities = capabilities,
-  }
+  local config = configs[lsp] or {}
+  config.on_attach = on_attach
+  config.capabilities = capabilities
+
+  lspconfig[lsp].setup(config)
 end
 
 --
+-- lspconfig.pyright.setup { blabla}
 -- lspconfig.pyright.setup { blabla}
