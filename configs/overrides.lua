@@ -5,11 +5,11 @@ M.treesitter = {
     "markdown",
     "markdown_inline",
 
-    -- defaults 
+    -- defaults
     "vim",
     "lua",
 
-    -- web dev 
+    -- web dev
     "html",
     "css",
     "javascript",
@@ -17,7 +17,7 @@ M.treesitter = {
     "tsx",
     "json",
 
-     -- low level
+    -- low level
     "c",
     "zig",
     "rust",
@@ -57,7 +57,7 @@ M.mason = {
     "godoc",
     "gofmt",
     "gofumpt",
-    "goimports",
+    "goimports-reviser",
   },
 }
 

@@ -27,9 +27,6 @@ local servers = {
   "rust_analyzer",
   "emmet_ls",
   "gopls",
-  "golines",
-  "gofumpt",
-  "goimports_reviser",
 }
 
 local configs = {
@@ -53,8 +50,8 @@ local configs = {
 
 for _, lsp in ipairs(servers) do
   local config = configs[lsp] or {}
-  config.on_attach = on_attach
-  config.capabilities = capabilities
+  config.on_attach = on_attach or {}
+  config.capabilities = capabilities or {}
 
   lspconfig[lsp].setup(config)
 end
