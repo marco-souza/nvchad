@@ -17,11 +17,6 @@ M.personal = {
   n = {
     [";"] = { ":", "enter command mode", opts = { nowait = true } },
 
-    -- ai
-    ["<M-a>"] = { oTerm, desc = "Toggle AI Chat" },
-    ["<M-s>"] = { oOpen, desc = "Ask Llama" },
-    -- ["aa"] = { function() require("llm.completion").toggle_suggestion() end, desc = "Enable AI Assistent" },
-
     -- neogit
     ["<leader>gg"] = {
       function()

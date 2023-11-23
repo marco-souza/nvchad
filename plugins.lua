@@ -100,6 +100,7 @@ local plugins = {
   {
     "marco-souza/ollero.nvim",
     name = "ollero",
+    dependencies = { "nvim-telescope/telescope-ui-select.nvim" },
     event = "VeryLazy",
     config = function()
       require("ollero").setup()
