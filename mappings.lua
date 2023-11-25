@@ -1,19 +1,7 @@
 ---@type MappingsTable
 local M = {}
 
-local function oOpen()
-  require("ollero").open()
-end
-
-local function oTerm()
-  require("ollero").openTerm()
-end
-
 M.personal = {
-  t = {
-    -- ai
-    ["<M-a>"] = { oTerm, desc = "Toggle AI Chat" },
-  },
   n = {
     [";"] = { ":", "enter command mode", opts = { nowait = true } },
 
