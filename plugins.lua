@@ -89,7 +89,7 @@ local plugins = {
   },
   {
     "wakatime/vim-wakatime",
-    event = "VeryLazy",
+    event = "InsertEnter",
   },
   {
     "folke/todo-comments.nvim",
