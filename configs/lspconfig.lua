@@ -28,7 +28,6 @@ local servers = {
   "emmet_ls",
   "gopls",
   "htmx",
-  "templ",
 }
 
 local configs = {
@@ -48,15 +47,10 @@ local configs = {
       },
     },
   },
-  templ = {
-    on_attach = on_attach,
-    capabilities = capabilities,
-    filetypes = { "templ", "gotmpl" },
-  },
   htmx = {
     on_attach = on_attach,
     capabilities = capabilities,
-    filetypes = { "html", "templ", "gotmpl" },
+    filetypes = { "html", "tsx", "gotmpl" },
   },
 }
 
