@@ -32,8 +32,6 @@ local servers = {
 
 local configs = {
   gopls = {
-    on_attach = on_attach,
-    capabilities = capabilities,
     cmd = { "gopls" },
     filetypes = { "go", "gomod", "gowork", "gotmpl" },
     root_dir = util.root_pattern("go.work", "go.mod", ".git"),
@@ -48,8 +46,6 @@ local configs = {
     },
   },
   htmx = {
-    on_attach = on_attach,
-    capabilities = capabilities,
     filetypes = { "html", "tsx", "gotmpl" },
   },
 }
