@@ -79,4 +79,14 @@ M.nvimtree = {
   },
 }
 
+-- obsidian
+M.obsidian = {
+  workspaces = {
+    {
+      name = "notes",
+      path = "~/w/marco-souza/notes",
+    },
+  },
+}
+
 return M
