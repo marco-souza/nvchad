@@ -27,7 +27,7 @@ local servers = {
   "rust_analyzer",
   "emmet_ls",
   "gopls",
-  "htmx",
+  -- "htmx_pls",
 }
 
 local configs = {
