@@ -66,14 +66,14 @@ local plugins = {
   {
     "NeogitOrg/neogit",
     dependencies = {
-      "nvim-lua/plenary.nvim",         -- required
-      "sindrets/diffview.nvim",        -- optional - Diff integration
+      "nvim-lua/plenary.nvim", -- required
+      "sindrets/diffview.nvim", -- optional - Diff integration
 
       -- Only one of these is needed, not both.
       "nvim-telescope/telescope.nvim", -- optional
-      "ibhagwan/fzf-lua",              -- optional
+      "ibhagwan/fzf-lua", -- optional
     },
-    config = true
+    config = true,
   },
   {
     "kylechui/nvim-surround",
@@ -118,7 +118,7 @@ local plugins = {
     event = "VeryLazy",
     dir = "~/workspace/marco-souza/ncm.nvim/",
     dependencies = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope-ui-select.nvim" },
-    opts = {},
+    config = true,
   },
   {
     "marco-souza/ollero.nvim",
