@@ -96,6 +96,7 @@ local plugins = {
     "wakatime/vim-wakatime",
     event = "InsertEnter",
   },
+  { "nvim-ts-autotag", opts = {} },
   {
     "folke/todo-comments.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
