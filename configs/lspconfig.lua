@@ -23,6 +23,7 @@ local servers = {
   "html",
   "cssls",
   ts_lsp,
+  "eslint",
   "clangd",
   "rust_analyzer",
   "emmet_ls",
@@ -43,6 +44,11 @@ local configs = {
           unusedparams = true,
         },
       },
+    },
+  },
+  eslint = {
+    settings = {
+      packageManager = "yarn",
     },
   },
   htmx = {
