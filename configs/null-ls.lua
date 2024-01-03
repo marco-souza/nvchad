@@ -8,7 +8,6 @@ end
 local b = null_ls.builtins
 
 local sources = {
-
   -- webdev stuff
   b.formatting.prettier, -- so prettier works only on these filetypes
 
@@ -22,9 +21,6 @@ local sources = {
   b.formatting.gofumpt,
   b.formatting.goimports_reviser,
   b.formatting.golines,
-
-  -- cpp
-  b.formatting.clang_format,
 }
 
 local on_attach = function(client, bufnr)
