@@ -7,6 +7,11 @@ end
 
 local b = null_ls.builtins
 
+local cspell_path = vim.fn.resolve(vim.fn.getenv "HOME" .. "/.cspell.json")
+local config = {
+  config_file_preferred_name = cspell_path,
+}
+
 local sources = {
 
   -- webdev stuff
@@ -24,8 +29,8 @@ local sources = {
   b.formatting.golines,
 
   -- spell
-  b.diagnostics.cspell,
-  b.code_actions.cspell,
+  b.diagnostics.cspell.with { config = config },
+  b.code_actions.cspell.with { config = config },
 }
 
 local on_attach = function(client, bufnr)
