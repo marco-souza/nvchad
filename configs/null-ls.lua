@@ -8,18 +8,7 @@ end
 local b = null_ls.builtins
 
 local config = {
-  find_json = function()
-    local cspell_user_path = vim.fn.resolve(vim.fn.getenv "HOME" .. "/.cspell.json")
-
-    if vim.loop.fs_stat(cspell_user_path) then
-      vim.fn.system {
-        "touch",
-        cspell_user_path,
-      }
-    end
-
-    return cspell_user_path
-  end,
+  config_file_preferred_name = ".cspell.json",
 }
 
 local sources = {
