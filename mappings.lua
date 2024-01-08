@@ -10,14 +10,14 @@ M.personal = {
       function()
         require("neogit").open()
       end,
-      desc = "Manage Git (Neogit)",
+      opts = { desc = "Manage Git (Neogit)" },
     },
 
     -- lsp
-    ["gf"] = { vim.lsp.buf.format, desc = "Rename variable name" },
-    ["gr"] = { vim.lsp.buf.rename, desc = "Rename variable name" },
-    ["gd"] = { vim.lsp.buf.definition, desc = "Go to Definition" },
-    ["gD"] = { vim.lsp.buf.references, desc = "Go to References" },
+    ["gf"] = { vim.lsp.buf.format, opts = { desc = "Rename variable name" } },
+    ["gr"] = { vim.lsp.buf.rename, opts = { desc = "Rename variable name" } },
+    ["gd"] = { vim.lsp.buf.definition, opts = { desc = "Go to Definition" } },
+    ["gD"] = { vim.lsp.buf.references, opts = { desc = "Go to References" } },
 
     -- harpoon
     ["<leader>ml"] = {
