@@ -116,7 +116,7 @@ local plugins = {
   -- Personal plugins
   {
     "marco-souza/ncm.nvim",
-    event = "VeryLazy",
+    cmd = "Config",
     dir = "~/workspace/marco-souza/ncm.nvim/",
     dependencies = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope-ui-select.nvim" },
     config = true,
