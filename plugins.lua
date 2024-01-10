@@ -99,7 +99,9 @@ local plugins = {
   { "nvim-ts-autotag", opts = {} },
   {
     "folke/todo-comments.nvim",
+    event = "LspAttach",
     dependencies = { "nvim-lua/plenary.nvim" },
+    opts = require "custom.configs.comments",
   },
   {
     "epwalsh/obsidian.nvim",
@@ -130,7 +132,7 @@ local plugins = {
   },
   {
     "nvim-neorg/neorg",
-    event = "InsertEnter",
+    ft = "norg",
     build = ":Neorg sync-parsers",
     dependencies = { "nvim-lua/plenary.nvim" },
     opts = {
@@ -148,32 +150,17 @@ local plugins = {
     },
   },
 
+  -- TODO: waiting for https://github.com/huggingface/llm.nvim/pull/68
   -- {
-  --   "huggingface/llm.nvim",
-  --   event = "VeryLazy",
+  --   "noahbald/llm.nvim",
+  --   event = "LspAttach",
+  --   version = "main",
   --   opts = {
-  --     model_eos = "<EOT>",
-  --     fim = {
-  --       enabled = true,
-  --       prefix = "<PRE> ",
-  --       middle = " <MID>",
-  --       suffix = " <SUF>",
-  --     },
-  --     model = "codellama/CodeLlama-13b-hf",
-  --     context_window = 4096,
-  --     -- model = "http://localhost:11434/api/",
-  --     -- tokenizer = {
-  --     --   repository = "codellama/CodeLlama-13b-hf",
-  --     -- }
+  --     -- model = "http://localhost:11434/api/generate",
+  --     model = "http://localhost:11434/api/generate",
+  --     adaptor = "ollama",
+  --     request_body = { model = "codellama:7b-code" },
   --   },
-  -- },
-  -- {
-  --   name = "ollama",
-  --   dir = "~/w/plugins/ollama.nvchad/",
-  --   event = "VeryLazy",
-  --   config = function ()
-  --     require('ollama').setup()
-  --   end
   -- },
 
   -- To make a plugin not be loaded

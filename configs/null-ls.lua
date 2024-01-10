@@ -7,10 +7,6 @@ end
 
 local b = null_ls.builtins
 
-local config = {
-  config_file_preferred_name = ".cspell.json",
-}
-
 local sources = {
 
   -- webdev stuff
@@ -26,10 +22,6 @@ local sources = {
   b.formatting.gofumpt,
   b.formatting.goimports_reviser,
   b.formatting.golines,
-
-  -- spell
-  b.diagnostics.cspell.with { config = config },
-  b.code_actions.cspell.with { config = config },
 }
 
 local on_attach = function(client, bufnr)
