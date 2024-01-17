@@ -1,7 +1,6 @@
 local ensure_installed = {
   -- lua stuff
   "lua-language-server",
-  "lua_ls",
   "stylua",
 
   -- web dev stuff
@@ -38,6 +37,7 @@ local lsp_servers = {
   "rust_analyzer",
   "emmet_ls",
   "gopls",
+  "lua_ls",
   -- "htmx_pls",
 }
 
@@ -60,8 +60,6 @@ local function setup_js_server()
 end
 
 local function lspconfig_setup()
-  require "plugins.configs.lspconfig" -- default configs
-
   local on_attach = require("plugins.configs.lspconfig").on_attach
   local capabilities = require("plugins.configs.lspconfig").capabilities
   local lspconfig = require "lspconfig"
@@ -70,7 +68,6 @@ local function lspconfig_setup()
   setup_js_server()
 
   local configs = {
-
     gopls = {
       cmd = { "gopls" },
       filetypes = { "go", "gomod", "gowork", "gotmpl" },
@@ -96,8 +93,21 @@ local function lspconfig_setup()
     lua_ls = {
       settings = {
         Lua = {
-          completion = {
-            callSnippet = "Replace",
+          runtime = {
+            version = "LuaJIT",
+          },
+          diagnostics = {
+            globals = { "vim" },
+          },
+          workspace = {
+            library = {
+              [vim.fn.expand "$VIMRUNTIME/lua"] = true,
+              [vim.fn.expand "$VIMRUNTIME/lua/vim/lsp"] = true,
+              [vim.fn.stdpath "data" .. "/lazy/ui/nvchad_types"] = true,
+              [vim.fn.stdpath "data" .. "/lazy/lazy.nvim/lua/lazy"] = true,
+            },
+            maxPreload = 100000,
+            preloadFileSize = 10000,
           },
         },
       },
@@ -113,22 +123,19 @@ local function lspconfig_setup()
   end
 end
 
----@type NvPluginSpec[]
+---@type NvPluginSpec
 return {
-  {
-    "neovim/nvim-lspconfig",
-    event = "VeryLazy",
-    config = lspconfig_setup,
-    dependencies = {
-      {
-        "williamboman/mason.nvim",
-        config = true,
-        opts = {
-          automatic_installation = true,
-          ensure_installed = ensure_installed,
-        },
+  "neovim/nvim-lspconfig",
+  event = "VeryLazy",
+  config = lspconfig_setup,
+  dependencies = {
+    {
+      "williamboman/mason.nvim",
+      config = true,
+      opts = {
+        automatic_installation = true,
+        ensure_installed = ensure_installed,
       },
-      { "folke/neodev.nvim", opts = {} },
     },
   },
 }
