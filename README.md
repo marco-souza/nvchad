@@ -1,4 +1,4 @@
-# Personal NvChat setup
+# Personal NvChad Setup
 
 This repository stores my custom configs for NvChad.
 
