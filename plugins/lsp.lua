@@ -12,6 +12,7 @@ local ensure_installed = {
   "templ",
   "prettier",
   "emmet_ls",
+  "htmx_pls",
 
   -- rust stuff
   "rustfmt",
@@ -38,7 +39,7 @@ local lsp_servers = {
   "emmet_ls",
   "gopls",
   "lua_ls",
-  -- "htmx_pls",
+  "htmx",
 }
 
 local function is_deno_project()
