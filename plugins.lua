@@ -65,6 +65,7 @@ local plugins = {
   },
   {
     "NeogitOrg/neogit",
+    config = true,
     dependencies = {
       "nvim-lua/plenary.nvim",  -- required
       "sindrets/diffview.nvim", -- optional - Diff integration
@@ -73,7 +74,9 @@ local plugins = {
       "nvim-telescope/telescope.nvim", -- optional
       "ibhagwan/fzf-lua",              -- optional
     },
-    config = true,
+    keys = {
+      { "<leader>gg", ":Neogit<CR>", desc = "Neogit toggle" },
+    },
   },
   {
     "kylechui/nvim-surround",
@@ -88,9 +91,43 @@ local plugins = {
   {
     "ThePrimeagen/harpoon",
     event = "InsertEnter",
-    config = function()
-      require("telescope").load_extension "harpoon"
-    end,
+    keys = {
+      {
+        "<leader>ml",
+        function()
+          require("harpoon.ui").toggle_quick_menu()
+        end,
+        desc = "list marks",
+      },
+      {
+        "<leader>mt",
+        function()
+          require("harpoon.term").gotoTerminal()
+        end,
+        desc = "term",
+      },
+      {
+        "<leader>mm",
+        function()
+          require("harpoon.mark").add_file()
+        end,
+        desc = "Show marks",
+      },
+      {
+        "<leader>mn",
+        function()
+          require("harpoon.ui").nav_next()
+        end,
+        desc = "Next mark",
+      },
+      {
+        "<leader>mb",
+        function()
+          require("harpoon.ui").nav_prev()
+        end,
+        desc = "Prev mark",
+      },
+    },
   },
   {
     "wakatime/vim-wakatime",
