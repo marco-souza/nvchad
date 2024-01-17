@@ -1,4 +1,7 @@
+---@type NvPluginSpec
 return {
+  { "wakatime/vim-wakatime", event = "VeryLazy" },
+  { "nvim-ts-autotag", opts = {} },
   {
     "max397574/better-escape.nvim",
     event = "InsertEnter",
@@ -15,8 +18,6 @@ return {
     version = "*", -- Use for stability; omit to use `main` branch for the latest features
     config = true,
   },
-  { "wakatime/vim-wakatime", event = "VeryLazy" },
-  { "nvim-ts-autotag",       opts = {} },
   {
     "dkarter/bullets.vim",
     event = "InsertEnter",

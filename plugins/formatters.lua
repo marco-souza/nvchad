@@ -1,3 +1,4 @@
+---@type NvPluginSpec
 return {
   {
     "nvimtools/none-ls.nvim",
