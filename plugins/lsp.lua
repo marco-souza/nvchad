@@ -44,11 +44,7 @@ local lsp_servers = {
 
 local function is_deno_project()
   local files = vim.fs.find({ "deno.json", "deno.jsonc" }, { upward = true })
-  -- if table has something, return true
-  for _ in pairs(files) do
-    return true
-  end
-  return false
+  return #files > 0
 end
 
 local function setup_js_server()
