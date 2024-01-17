@@ -66,12 +66,12 @@ local plugins = {
   {
     "NeogitOrg/neogit",
     dependencies = {
-      "nvim-lua/plenary.nvim", -- required
+      "nvim-lua/plenary.nvim",  -- required
       "sindrets/diffview.nvim", -- optional - Diff integration
 
       -- Only one of these is needed, not both.
       "nvim-telescope/telescope.nvim", -- optional
-      "ibhagwan/fzf-lua", -- optional
+      "ibhagwan/fzf-lua",              -- optional
     },
     config = true,
   },
@@ -126,7 +126,14 @@ local plugins = {
   {
     "marco-souza/ollero.nvim",
     event = "VeryLazy",
-    dependencies = { "nvim-telescope/telescope-ui-select.nvim" },
+    dependencies = {
+      -- {
+      --   "marco-souza/term.nvim",
+      --   dir = "~/workspace/marco-souza/term.nvim/",
+      -- },
+      "marco-souza/term.nvim",
+      "nvim-telescope/telescope-ui-select.nvim",
+    },
     dir = "~/workspace/marco-souza/ollero.nvim/",
     opts = {},
   },
@@ -137,9 +144,9 @@ local plugins = {
     dependencies = { "nvim-lua/plenary.nvim" },
     opts = {
       load = {
-        ["core.defaults"] = {}, -- Loads default behaviour
+        ["core.defaults"] = {},  -- Loads default behaviour
         ["core.concealer"] = {}, -- Adds pretty icons to your documents
-        ["core.dirman"] = { -- Manages Neorg workspaces
+        ["core.dirman"] = {      -- Manages Neorg workspaces
           config = {
             workspaces = {
               notes = "~/workspace/marco-souza/notes",
