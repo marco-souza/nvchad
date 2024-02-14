@@ -15,6 +15,10 @@ M.personal = {
   n = {
     [";"] = { ":", "enter command mode", opts = { nowait = true } },
 
+    -- buffers navigation
+    ["<S-l>"] = { ":bnext<CR>", opts = { desc = "Move next buffer" } },
+    ["<S-h>"] = { ":bprevious<CR>", opts = { desc = "Move previous buffer" } },
+
     -- alt navigation: https://vim.fandom.com/wiki/Moving_lines_up_or_down
     ["<A-j>"] = { ":m .+1<CR>==", opts = { desc = "Move sally up" } },
     ["<A-k>"] = { ":m .-2<CR>==", opts = { desc = "Move sally down" } },
