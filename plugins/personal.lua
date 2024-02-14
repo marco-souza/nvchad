@@ -21,16 +21,22 @@ return {
     opts = {},
   },
 
-  -- TODO: waiting for https://github.com/huggingface/llm.nvim/pull/68
-  -- {
-  --   "noahbald/llm.nvim",
-  --   event = "LspAttach",
-  --   version = "main",
-  --   opts = {
-  --     -- model = "http://localhost:11434/api/generate",
-  --     model = "http://localhost:11434/api/generate",
-  --     adaptor = "ollama",
-  --     request_body = { model = "codellama:7b-code" },
-  --   },
-  -- },
+  {
+    "huggingface/llm.nvim",
+    event = "LspAttach",
+    version = "main",
+    opts = {
+      model = "codellama:7b",
+      backend = "ollama",
+      url = "http://localhost:11434/api/generate",
+      -- cf https://github.com/ollama/ollama/blob/main/docs/api.md#parameters
+      request_body = {
+        -- Modelfile options for the model you use
+        options = {
+          temperature = 0.2,
+          top_p = 0.95,
+        },
+      },
+    },
+  },
 }
