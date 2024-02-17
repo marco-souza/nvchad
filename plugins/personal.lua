@@ -23,6 +23,7 @@ return {
 
   {
     "huggingface/llm.nvim",
+    enable = false, -- sloooow
     event = "LspAttach",
     version = "main",
     opts = {
